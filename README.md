@@ -34,6 +34,8 @@ The acquisition algorithm used here is  **Parallel Code Phase search acquisition
 
 Five GPS satellites (PRN 16, 22, 26, 27, and 31) have been successfully acquired, with their code delay and Doppler information displayed below
 
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/7bc3e95077b50626f87377d5cf1ee7992f839ebe/result/task1/opensky/Screenshot%202025-03-13%20122245.jpg)
+
 | Satellite PRN | Doppler Frequency (Hz) | Code Phase |
 |---------------|------------------------|------------|
 | 16            | -240.4022216796875     | 31994      |
@@ -41,12 +43,11 @@ Five GPS satellites (PRN 16, 22, 26, 27, and 31) have been successfully acquired
 | 31            | 1066.3700103797019     | 18744      |
 | 22            | 1571.102142330259      | 55101      |
 | 27            | -3220.396041870117     | 8814       |
-
-![image](result/task1/opensky/Screenshot 2025-03-13 105559.jpg)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/4b5bf86cade7c79afcc49dee4517f053b5791105/result/task1/opensky/Screenshot%202025-03-13%20105559.jpg)
 
 GPS satellites PRN 16, 22, 26, 27, and 31 have been successfully acquired! The corresponding skyplot is displayed below.
 
-![image](https://github.com/user-attachments/assets/5ebe4e29-f3e7-4747-a05d-3d260cfa8b4f)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/4b5bf86cade7c79afcc49dee4517f053b5791105/result/task1/opensky/Screenshot%202025-03-13%20105559.jpg)
 
 ### Acquistion result (Urban.dat)
 
