@@ -394,7 +394,7 @@ for channelNr = 1:settings.numberOfChannels
             trackResults(channelNr).Q_P(loopCnt) = Q_P;
             trackResults(channelNr).Q_L(loopCnt) = Q_L;
 
-            %% for multiple correlators by Hayden
+            %% for multiple correlators
             if settings.multicorr==1
             trackResults(channelNr).I_multi{loopCnt} = [I_E,I_E04,I_E03,I_E02,I_E01,I_P,I_L01,I_L02,I_L03,I_L04,I_L];
             trackResults(channelNr).Q_multi{loopCnt} = [Q_E,Q_E04,Q_E03,Q_E02,Q_E01,Q_P,Q_L01,Q_L02,Q_L03,Q_L04,Q_L];
