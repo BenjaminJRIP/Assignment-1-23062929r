@@ -76,7 +76,7 @@ trackResults.pllDiscrFilt   = inf(1, settings.msToProcess);
 trackResults.remCodePhase       = inf(1, settings.msToProcess);
 trackResults.remCarrPhase       = inf(1, settings.msToProcess);
 
-%% MULTICORRELATOR BY HAYDEN
+%% MULTICORRELATOR
 if settings.multicorr==1
 trackResults.Q_multi           = cell(1, settings.msToProcess);
 trackResults.I_multi            = cell(1, settings.msToProcess);
@@ -273,7 +273,7 @@ for channelNr = 1:settings.numberOfChannels
 
             remCodePhase = (tcode(blksize) + codePhaseStep) - settings.codeLength;
             
-            %% Multiple correlators by Hayden for Assignment1 (-0.4~0.4)
+            %% Multiple correlators(-0.4~0.4)
             if settings.multicorr==1
             tcode       = (remCodePhase-0.4) : codePhaseStep : ((blksize-1)*codePhaseStep+remCodePhase-0.4);
             tcode2      = ceil(tcode) + 1;
@@ -327,7 +327,7 @@ for channelNr = 1:settings.numberOfChannels
             I_L = sum(lateCode   .* iBasebandSignal);
             Q_L = sum(lateCode   .* qBasebandSignal);
             
-            %%  calculate the values for multiple correlators by Hayden
+            %%  calculate the values for multiple correlators
             if settings.multicorr==1
             I_E04 = sum(earlyCode04  .* iBasebandSignal);
             Q_E04 = sum(earlyCode04  .* qBasebandSignal);
