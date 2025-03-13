@@ -1,5 +1,9 @@
 # Assignment-1-of-AAE6102_23062929r
 
+Running init.m should generate the figures "acquisition" (bar chart), navigation, and EKF navigation.
+Running AssignmentPlot should produce the Acquisition plot, Correlation plot, velocity, and EKF velocity.
+Executing plotTracking(1:settings.numberOfChannels, trackResults, settings) in the command window should display the correlation result.
+
 ## Task 1: Acquisition
 Process the IF data using a GNSS SDR and generate the initial acquisition results.
 
@@ -36,6 +40,8 @@ Five GPS satellites (PRN 16, 22, 26, 27, and 31) have been successfully acquired
 
 ![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/7bc3e95077b50626f87377d5cf1ee7992f839ebe/result/task1/opensky/Screenshot%202025-03-13%20122245.jpg)
 
+For the dataset Opensky.bin, the course values of the carrier Doppler frequency and code phase of the satellite signals are shown in the table below:
+
 | Satellite PRN | Doppler Frequency (Hz) | Code Phase |
 |---------------|------------------------|------------|
 | 16            | -240.4022216796875     | 31994      |
@@ -43,6 +49,7 @@ Five GPS satellites (PRN 16, 22, 26, 27, and 31) have been successfully acquired
 | 31            | 1066.3700103797019     | 18744      |
 | 22            | 1571.102142330259      | 55101      |
 | 27            | -3220.396041870117     | 8814       |
+
 ![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/4b5bf86cade7c79afcc49dee4517f053b5791105/result/task1/opensky/Screenshot%202025-03-13%20105559.jpg)
 
 GPS satellites PRN 16, 22, 26, 27, and 31 have been successfully acquired! The corresponding skyplot is displayed below.
@@ -53,6 +60,10 @@ GPS satellites PRN 16, 22, 26, 27, and 31 have been successfully acquired! The c
 
 Four GPS satellites (PRN 1, 3, 11, and 18) have been successfully acquired, with their code delay and Doppler information displayed below
 
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task1/urban/Screenshot%202025-03-13%20122310.jpg)
+
+For the dataset Urban.dat, the course values of the carrier Doppler frequency and code phase of the satellite signals are shown in the table below:
+
 | Satellite PRN | Doppler Frequency (Hz) | Code Phase |
 |---------------|------------------------|------------|
 | 1             | -4578797.416687012     | 3329       |
@@ -60,11 +71,11 @@ Four GPS satellites (PRN 1, 3, 11, and 18) have been successfully acquired, with
 | 11            | -4579590.873718262     | 1155       |
 | 18            | -4580322.341918945     | 10581      |
 
-![image](https://github.com/user-attachments/assets/84d3597b-a623-4d48-a4a9-ba3a3e2e0afc)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task1/urban/Screenshot%202025-03-13%20105630.jpg)
 
 GPS satellites PRN 1, 3, 11, and 18 have been successfully acquired! The corresponding skyplot is displayed below.
 
-![image](https://github.com/user-attachments/assets/a37639ed-5b1e-4c0e-b7a8-27bc2cf877f1)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task1/urban/Screenshot%202025-03-13%20112907.jpg)
 
 Compared to open-sky environments, fewer GPS satellites are acquired due to the obstruction caused by buildings.In open-sky environments, GPS receivers have a clear line of sight to a larger number of satellites, which allows for more accurate and reliable positioning. However, in urban areas or environments with significant obstructions, such as tall buildings, the number of visible satellites is reduced. This phenomenon is known as urban canyon effect.
 
@@ -135,46 +146,49 @@ In this case, **multiple correlators with a spacing of 0.1 chips, ranging from -
 This section contrasts the tracking results from urban data (acquisition results from GPS satellite PRN 18) with those from open-sky data (acquisition results from GPS satellite PRN 16). The acquisition results from GPS satellite PRN 16 from open-sky data and GPS satellite PRN 18 from urban data are used as examples.
 
 ### 2.3 Tracking result from open sky data (acquisition results from GPS satellite PRN 16)
-![image](https://github.com/user-attachments/assets/9f877a1b-f4e7-4335-84ec-78406e80fb90)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/opensky/Task2_Ch1PRN16.jpg)
+
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/opensky/16_1.jpg)
 
 **Q-Channel Near Zero:** Ideally, the Q-channel contains only noise and residual error, with values fluctuating around zero. This indicates that the carrier phase is aligned.
 
-![image](https://github.com/user-attachments/assets/3861d8ca-689e-40c2-bd93-3bc4a3a47df4)
-
-**DLL Output (Code Discriminator Output) Near Zero:** This shows that the local code is aligned with the received signal's code phase, indicating minimal code tracking error.
-
-![image](https://github.com/user-attachments/assets/5a1c4749-6351-4903-aa04-a4b4d573adaa)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/opensky/16_2.jpg)
 
 **PLL Output (Phase/Frequency Discriminator Output) Near Zero:** This indicates that the local carrier is synchronized with the received signal carrier, ensuring stable carrier tracking.
 
-![image](https://github.com/user-attachments/assets/e7c34ef3-821f-441e-8537-66dd71ca2b07)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/opensky/16_3.jpg)
+
+**DLL Output (Code Discriminator Output) Near Zero:** This shows that the local code is aligned with the received signal's code phase, indicating minimal code tracking error.
+
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/opensky/16_4.jpg)
 
 **Prompt Correlation Greater than Early/Late:** This signifies that the code phases are precisely aligned, and the DLL is in a stable tracking state.
 
 **Autocorrelation Function from Multi-correlator output**
-![image](https://github.com/user-attachments/assets/5feecdfe-e1bb-4038-b1a0-592dc2db1b07)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/opensky/Correlation.jpg)
 
 **Symmetric and Undistorted ACF:** The shape of the Autocorrelation Function (ACF) is symmetric and undistorted, indicating that the satellite signal is not affected by multipath interference. This aligns with the open sky scenario. **The above results demonstrate that the satellite in open sky conditions is well acquired and tracked.**
 
 ### 2.4 Tracking result from urban data (acquisition results from GPS satellite PRN 18)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/urban/Task2_Ch4PRN18.jpg)
 
-![image](https://github.com/user-attachments/assets/78c5cf3b-513a-4edb-ace3-441da1704d2d)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/urban/18_1.jpg)
 
 **Q-Channel Not Always Near Zero:** The Q-channel sometimes exceeds the I-channel, indicating that not all energy is concentrated on the I-channel. This suggests that the carrier phase is not always well aligned.
 
-![image](https://github.com/user-attachments/assets/6890c144-abf8-4c6f-8fc1-981b79199ef7)
-
-**DLL Output Similar to Open Sky:** The Code Discriminator Output (DLL) is similar to that in open sky conditions.
-
-![image](https://github.com/user-attachments/assets/837709c8-565f-4da8-af7d-3385b688fc60)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/urban/18_2.jpg)
 
 **PLL Output Not Always Near Zero:** The Phase/Frequency Discriminator Output (PLL) shows significant fluctuations, indicating that the local carrier is not always synchronized with the received signal carrier, leading to unstable carrier tracking.
 
-![image](https://github.com/user-attachments/assets/89f84c68-d367-4d0c-bf0a-d8d851d2f535)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/urban/18_3.jpg)
+
+**DLL Output Similar to Open Sky:** The Code Discriminator Output (DLL) is similar to that in open sky conditions.
+
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/urban/18_4.jpg)
 
 **Prompt Correlation Not Always Greater than Early/Late:** The Prompt correlation is sometimes weaker than Early/Late, especially **when the PLL output is high**, indicating that the carrier phases are not precisely aligned.
 
-![fc619ab07ec3f9a56eb0863fddb3386](https://github.com/user-attachments/assets/3472b606-dcf2-440d-a308-5a119ccfbb24)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/ef659cbd78bec394c89431df944de83b37def2a4/result/task2/urban/Correlation.jpg)
 
 **Asymmetric Multi-Correlator Output:** The ACF is distorted due to multipath interference, leading to incorrect pseudorange measurements and reduced positioning accuracy. **The above results demonstrate that the satellite in urban conditions is not well acquired and tracked.**
 
