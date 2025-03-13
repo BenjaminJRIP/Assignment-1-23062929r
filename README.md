@@ -54,7 +54,7 @@ For the dataset Opensky.bin, the course values of the carrier Doppler frequency 
 
 GPS satellites PRN 16, 22, 26, 27, and 31 have been successfully acquired! The corresponding skyplot is displayed below.
 
-![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/4b5bf86cade7c79afcc49dee4517f053b5791105/result/task1/opensky/Screenshot%202025-03-13%20105559.jpg)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/1bf9770826ee47876f91a7700a391afaf4f366bd/result/task1/opensky/Screenshot%202025-03-13%20112605.jpg)
 
 ### Acquistion result (Urban.dat)
 
