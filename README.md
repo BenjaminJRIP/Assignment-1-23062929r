@@ -227,7 +227,7 @@ Key Parameters Extracted from Navigation Message. **Ephemeris Data (31 parameter
 **Weighted least square for velocity**
 
 ```
-%===To calculate receiver velocity=====HD
+%===To calculate receiver velocity===
 b=[];
 lamda=settings.c/1575.42e6;
 rate=-lamda*doppler;
