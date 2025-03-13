@@ -87,7 +87,7 @@ for iter = 1:nmbOfIterations
                      (-(Rot_X(3) - pos(3))) / norm(Rot_X - pos(1:3), 'fro') ...
                      1 ];
         
-        % weight by hd
+        
         
     end % for i = 1:nmbOfSatellites
 
@@ -131,7 +131,7 @@ if nargout > 4
 end  % if nargout  == 4
 
 
-%===To calculate receiver velocity=====HD
+%===To calculate receiver velocity===
 b=[];
 satvelocity=satvelocity';
 for i=1:nmbOfSatellites
