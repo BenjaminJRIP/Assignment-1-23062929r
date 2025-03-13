@@ -1,7 +1,9 @@
 # Assignment-1-of-AAE6102_23062929r
 
 Running init.m should generate the figures "acquisition" (bar chart), navigation, and EKF navigation.
+
 Running AssignmentPlot should produce the Acquisition plot, Correlation plot, velocity, and EKF velocity.
+
 Executing plotTracking(1:settings.numberOfChannels, trackResults, settings) in the command window should display the correlation result.
 
 ## Task 1: Acquisition
