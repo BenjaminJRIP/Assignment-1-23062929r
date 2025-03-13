@@ -1,4 +1,4 @@
-# Assignment-1-of-AAE6102_23062929r
+# Assignment-1-23062929r
 
 Running init.m should generate the figures "acquisition" (bar chart), navigation, and EKF navigation.
 
