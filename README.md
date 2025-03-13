@@ -193,17 +193,21 @@ This section contrasts the tracking results from urban data (acquisition results
 **Asymmetric Multi-Correlator Output:** The ACF is distorted due to multipath interference, leading to incorrect pseudorange measurements and reduced positioning accuracy. **The above results demonstrate that the satellite in urban conditions is not well acquired and tracked.**
 
 ## Task 3: Navigation data decoding (PRN 16 Open-Sky and PRN 18 urban as an Example)
-![image](https://github.com/user-attachments/assets/25346100-71d7-473d-af67-2d54fb2ac657)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/7b76f7d012dece18c002df7a905ab3e9dbad9315/result/task3/16_1.jpg)
 
-The above image shows the navigation data message decoded from the incoming signal in an open sky environment.
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task3/Opensky16.jpg)
 
-![image](https://github.com/user-attachments/assets/3912012d-3d7c-422f-84a3-fa7bc758c930)
+The above image shows the navigation data message decoded from the incoming signal in an open sky environment from GPS satellite PRN 16.
 
-The above image shows the navigation data message decoded from the incoming signal in an urban environment. Compared to the open sky data, the amplitude is not stable, indicating that the energy is not concentrated on the I-channel. This further proves that the received signal is not well tracked in urban conditions.
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/7b76f7d012dece18c002df7a905ab3e9dbad9315/result/task3/18_1.jpg)
+
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task3/urban18.jpg)
+
+The above image shows the navigation data message decoded from the incoming signal in an urban environment from GPS satellite PRN 18. Compared to the open sky data, the amplitude is not stable, indicating that the energy is not concentrated on the I-channel. This further proves that the received signal is not well tracked in urban conditions.
 
 Key Parameters Extracted from Navigation Message. **Ephemeris Data (31 parameters)**
 
-![image](https://github.com/user-attachments/assets/8726c04c-6d76-4b80-94af-26dca388a5ef)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/7b76f7d012dece18c002df7a905ab3e9dbad9315/result/task3/Screenshot%202025-03-13%20111631.jpg)
 
 ## Task 4: Position and velocity estimation
 **Weighted least square for positioning**
@@ -233,21 +237,21 @@ end
 v=(A'*C*A)\(A'*C*b');
 ```
 
-### The positioning result of the open sky scenario is shown below, where the yellow dot represents the ground truth
-![image](https://github.com/user-attachments/assets/f9209b1d-1ba0-40dc-acae-dcfad9d21c58)
+### The positioning result of the open sky scenario is shown below
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task4/OpenSky/Navigation.jpg)
 
 The weighted least squares (WLS) solution demonstrates **high accuracy** in open sky environments, closely aligning with ground truth measurements. This precision is due to the absence of significant signal propagation impairments such as multipath interference and non-line-of-sight (NLOS) errors under unobstructed conditions.
 
-![image](https://github.com/user-attachments/assets/eae97665-a27f-470b-b9df-61c1d169205f)
-![image](https://github.com/user-attachments/assets/b5f481d8-2eed-43a6-9e54-5564f1663bad)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task4/OpenSky/Screenshot%202025-03-13%20112755.jpg)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task4/OpenSky/velocity.jpg)
 
-### The positioning result of the urban scenario is shown below, where the yellow dot represents the ground truth.
+### The positioning result of the urban scenario is shown below
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task4/Urban/Navigation.jpg)
 
 Urban GNSS positioning suffers from **reduced accuracy** compared to open environments due to signal obstruction by buildings, multipath reflections, and non-line-of-sight (NLOS) reception, which distort satellite measurements. These challenges degrade geometric diversity (e.g., fewer visible satellites, higher DOP) and introduce meter-level errors.
 
-![image](https://github.com/user-attachments/assets/7ff39f64-60eb-443d-8142-01e4fa41a4d9)
-![image](https://github.com/user-attachments/assets/a9a73960-67d5-47b6-8a8a-134caf10fce0)
-![image](https://github.com/user-attachments/assets/2b95eb92-24ca-45b8-9e92-0ad5ef8aa55e)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task4/Urban/Screenshot%202025-03-13%20112836.jpg)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task4/Urban/Velocity.jpg)
 
 The velocity estimated by WLS varies significantly if no filtering is applied.
 
@@ -276,22 +280,22 @@ Kalman Filter-based positioning provides smoother trajectories with fewer abrupt
 The Kalman Filter outperforms WLS by incorporating temporal continuity, dynamic noise adaptation, and recursive state estimation. Unlike WLS, which processes each epoch independently and is susceptible to measurement noise-induced jumps, the Kalman Filter uses a state-space model to propagate estimates forward using motion dynamics (velocity and clock drift). It dynamically balances process noise (Q) and measurement noise (R) to suppress outliers and model uncertainties.
 
 ### Positioning Results of EKF in Open Sky
-![image](https://github.com/user-attachments/assets/4775e670-9c09-48aa-915e-b9680190e555)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task5/OpenSky/EKF_Navigation.jpg)
 
-![image](https://github.com/user-attachments/assets/2e2dec31-5c69-4bdc-984a-d33901594efc)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task5/OpenSky/Screenshot%202025-03-13%20115539.jpg)
 
 The velocity after applying the Extended Kalman Filter is also significantly improved compared to WLS.
 
-![image](https://github.com/user-attachments/assets/6ac7d05a-1bcb-46e9-aadc-746a770ceb2b)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task5/OpenSky/EKF_velocity.jpg)
 
 ### Positioning Results of EKF in Urban Area
 
-![image](https://github.com/user-attachments/assets/1c6f0ad2-70ca-49ef-91e6-b74c8fd5e124)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task5/Urban/EKF_Navigation.jpg)
 
-![image](https://github.com/user-attachments/assets/d72b7f25-4cfd-4838-b222-87fcfb7861bb)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task5/Urban/Screenshot%202025-03-13%20115215.jpg)
 
 The velocity after applying the Kalman Filter:
 
-![image](https://github.com/user-attachments/assets/b7f19a64-cfe0-4ee7-b7a4-7c29e01f01cc)
+![image](https://github.com/BenjaminJRIP/Assignment-1-of-AAE6102_23062929r/blob/5240dbe8cf391ce5344b1cbd3154d23f2f239b26/result/task5/Urban/EKF_velocity.jpg)
 
 Compared to the open-sky environment, the positioning and velocity in urban areas are less accurate.
