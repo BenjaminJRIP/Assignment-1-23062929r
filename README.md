@@ -42,7 +42,7 @@ Five GPS satellites (PRN 16, 22, 26, 27, and 31) have been successfully acquired
 | 22            | 1571.102142330259      | 55101      |
 | 27            | -3220.396041870117     | 8814       |
 
-![image](https://github.com/user-attachments/assets/dfc85cc2-599e-4d19-a48a-a67c41c1d902)
+![image](result/task1/opensky/Screenshot 2025-03-13 105559.jpg)
 
 GPS satellites PRN 16, 22, 26, 27, and 31 have been successfully acquired! The corresponding skyplot is displayed below.
 
