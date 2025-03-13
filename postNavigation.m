@@ -145,7 +145,7 @@ readyChnList = activeChnList;
 % first fix, localTime will be updated by measurement sample step.
 localTime = inf;
 
-%% ekf parameter initialization --hd
+%% ekf parameter initialization
 P = diag([10000,10000,10000,100,100,100,10000,100]);
 Q = diag([1,1,1,100,100,100,1,100]);
 
@@ -190,8 +190,8 @@ for currMeasNr = 1:measNrSum
                      calculatePseudoranges(trackResults,subFrameStart,TOW, ...
                      currMeasSample,localTime,activeChnList, settings);
    
-    %HD->doppler at that sample
-    navSolutions.rawD(:,currMeasNr)=calculateDoppler(trackResults,currMeasSample,activeChnList,settings); %TODO->HD:calculate doppler
+    %doppler at that sample
+    navSolutions.rawD(:,currMeasNr)=calculateDoppler(trackResults,currMeasSample,activeChnList,settings); %TODO->calculate doppler
 
     % Save transmitTime
     navSolutions.transmitTime(activeChnList, currMeasNr) = ...
@@ -200,7 +200,7 @@ for currMeasNr = 1:measNrSum
 %% Find satellites positions and clocks corrections =======================
     % Outputs are all colume vectors corresponding to activeChnList
     [satPositions, satClkCorr,satVolocity] = satpos(transmitTime(activeChnList), ...
-                                 [trackResults(activeChnList).PRN], eph); %TODO->HD: add velocity as output
+                                 [trackResults(activeChnList).PRN], eph); %TODO->add velocity as output
                                     
     
     % Save satClkCorr
@@ -216,7 +216,7 @@ for currMeasNr = 1:measNrSum
         clkCorrRawP = navSolutions.rawP(activeChnList, currMeasNr)' + ...
                                                    satClkCorr * settings.c;
 
-        % correct doppler for SV clock drift, can be neglected --hd
+        % correct doppler for SV clock drift, can be neglected
         clkCorrRawD = navSolutions.rawD(activeChnList, currMeasNr)';
                                                   
 
@@ -224,7 +224,7 @@ for currMeasNr = 1:measNrSum
         [xyzdt,navSolutions.el(activeChnList, currMeasNr), ...
                navSolutions.az(activeChnList, currMeasNr), ...
                navSolutions.DOP(:, currMeasNr),vxyzddt] =...
-                       leastSquarePos(satPositions, clkCorrRawP, settings,satVolocity,clkCorrRawD);%TODO->HD, add volocity as input to caculate receiver velocity
+                       leastSquarePos(satPositions, clkCorrRawP, settings,satVolocity,clkCorrRawD);% add volocity as input to caculate receiver velocity
 
 
         %=== Save results ===========================================================
@@ -233,12 +233,12 @@ for currMeasNr = 1:measNrSum
         navSolutions.Y(currMeasNr)  = xyzdt(2);
         navSolutions.Z(currMeasNr)  = xyzdt(3);       
         
-        % TODO->hd Receiver velocity in ECEF
+        % Receiver velocity in ECEF
         navSolutions.vX(currMeasNr)  = vxyzddt(1);
         navSolutions.vY(currMeasNr)  = vxyzddt(2);
         navSolutions.vZ(currMeasNr)  = vxyzddt(3);   
 
-        navSolutions.satllitePosition{currMeasNr}=satPositions; % (add by HD)
+        navSolutions.satllitePosition{currMeasNr}=satPositions; 
          
         %% static SPP with Extended Kalman Filter --sbs
         if currMeasNr == 1

@@ -1,4 +1,4 @@
-%% by HD calculate doppler
+%% calculate doppler
 function doppler=calculateDoppler(trackResults,currMeasSample,channelList,settings)
 
 for channelNr = channelList 
